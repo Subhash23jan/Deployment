@@ -9,29 +9,33 @@
 ];
  const newCard = document.createElement('div');
 
-        newCard.classList.add('cards');
-        projectTitles.forEach((title, index) => {
-            title.addEventListener('mouseover', () => {
-                title.style.color = '#0077B5';
-                title.style.cursor = 'pointer';
-                let imageIndex = 1;
-                const image = document.createElement('img');
-                image.src = projectsImages[index][0];
-                newCard.appendChild(image);
-                projectCards[index].replaceChild(newCard, divElement[index]);
-                setInterval(() => {
-                    image.src = projectsImages[index][imageIndex];
-                    imageIndex = (imageIndex + 1) % projectsImages[index].length;
-                }, 1500);
-            });
+        newCard.classList.add('projects-card');
+       projectTitles.forEach((title, index) => {
+        title.addEventListener('mouseover', () => {
+        title.style.color = '#0077B5';
+        title.style.cursor = 'pointer';
+        const imageContainer = document.createElement('div'); // Create a container for the image
+        const image = document.createElement('img');
+        image.src = `./images/${projectsImages[index][0]}`;
+        imageContainer.appendChild(image); // Append the image to the container
+        newCard.innerHTML = ''; // Clear the newCard element
+        newCard.appendChild(imageContainer); // Append the image container to the newCard
+        projectCards[index].replaceChild(newCard, divElement[index]);
 
-            title.addEventListener('mouseout', () => {
-                title.style.color = 'rgb(230, 223, 223)';
-                title.style.cursor = 'auto';
-                projectCards[index].replaceChild(divElement[index], newCard);
+        let imageIndex = 1;
+        setInterval(() => {
+            image.src = `./images/${projectsImages[index][imageIndex]}`;
+            imageIndex = (imageIndex + 1) % projectsImages[index].length;
+        }, 1500);
+    });
 
-            });
-        });
+    title.addEventListener('mouseout', () => {
+        title.style.color = 'rgb(230, 223, 223)';
+        title.style.cursor = 'auto';
+        projectCards[index].replaceChild(divElement[index], newCard);
+    });
+});
+
 // const sideHead = document.querySelectorAll(".sidehead");
 // sideHead.addEventListener('mouseover', () => {
 //     setTimeout(() => {
@@ -50,3 +54,7 @@ let lastScrollY = window.scrollY;
 
      lastScrollY = window.scrollY;
  });
+
+
+
+

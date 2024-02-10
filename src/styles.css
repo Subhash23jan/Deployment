@@ -138,6 +138,10 @@ title{
     transition: 500ms ease-in-out ;
     
 }
+.projects-card img{
+    width: 220px;
+    height: 420px;
+}
 .projects-card:hover{
     scale: 1.05;
     cursor: pointer; 
