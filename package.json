@@ -5,5 +5,8 @@
     "mime": "^4.0.1",
     "mime-types": "^2.1.35",
     "mongoose": "^8.1.1"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
   }
 }

@@ -4,9 +4,12 @@
   "description": "\"sample\"",
   "main": "index.js",
   "scripts": {
-    "test": "npm run",
+    "test": "jest",
     "start": "node index.js"
   },
   "author": "subhash",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^27.4.7"
+  }
 }
