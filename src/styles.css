@@ -123,7 +123,7 @@ title{
     justify-content: center;
     margin-left: 40px;
     margin-right: 40px;
-    margin-bottom: 150px;
+    margin-bottom: 100px;
 }
 .projects-card{
     margin-right: 50px;
@@ -135,15 +135,17 @@ title{
     height: 280px;
     background-color:rgb(18, 14, 14);
     border:none;
-    transition: 500ms ease-in-out ;
+    transition: 500ms ease-in ;
     
 }
 .projects-card img{
     width: 220px;
+    margin-top: 0;
     height: 420px;
 }
 .projects-card:hover{
-    scale: 1.05;
+    scale: 1.1;
+    align-self: center;
     cursor: pointer; 
     border-radius: 20px;
     box-shadow: 0 2px 32px 0.01px rgba(59, 56, 56, 0.992);
